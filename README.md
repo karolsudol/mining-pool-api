@@ -7,7 +7,7 @@
 </p>
 <br/>
 
-## postgres set-up
+## postgres db set-up
 
 1. `docker run --name postgres-db -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres`
 
@@ -20,3 +20,9 @@
 5. `cargo setup`
 
 6. `diesel migration generate mining_pool_ap`
+
+7. `up.sql` -> `create tables ...`
+
+8. `diesel migration run` -> `src/schema.rs`
+
+9. `diesel migration redo` -> `down.sql`
