@@ -64,14 +64,17 @@ impl WalletDAO {
 pub fn fetch_all_wallets(conn: &DBPooledConnection) -> Vec<Wallet> {
     use crate::schema::miners::dsl::*;
     use crate::schema::wallets::dsl::*;
+
     let all_wallets = match wallets.load::<WalletDAO>(conn) {
         Ok(result) => result,
         Err(_) => vec![],
     };
+
     let all_miners = match miners.load::<MinerDAO>(conn) {
         Ok(result) => result,
         Err(_) => vec![],
     };
+
     all_wallets
         .into_iter()
         .map(|w| {
