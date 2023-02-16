@@ -9,6 +9,8 @@
 
 ## postgres db set-up
 
+0. `docker compose build && docker compose up` or :
+
 1. `docker run --name postgres-db -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres`
 
 2. `sudo apt install libpq-dev`
