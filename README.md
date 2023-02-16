@@ -9,7 +9,7 @@
 
 ## postgres db set-up
 
-0. `docker compose build && docker compose up` or :
+0. `docker compose down && docker compose build && docker compose up` or build step by step:
 
 1. `docker run --name postgres-db -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres`
 
